@@ -56,8 +56,8 @@ const char stickmen[][7][15] = {
 
 int num;
 int wordLen;
-char solution[20];
-char guess[20];
+char solution[100];
+char guess[200];
 int wrongs = -1;
 int guessesLeft;
 int errorCode;
@@ -134,7 +134,6 @@ void play(){
 		}
 		printf("%d\n", counter);
 		printf("\n");
-		printf("Solution is: %s\n", solution);
 		printf("The Guess looks like this: %s\n", guess);
 		printf("Which character do you want to guess: ");
 		scanf("%c", &charGuessed);
@@ -145,7 +144,11 @@ void play(){
 		if(guessesLeft == 0){
 			printf("Congrats! You win! The word was: %s", solution);
 		}else {
-			printf("Only %d more letters needed!", guessesLeft);
+			printf("Only %d more letters needed!\n", guessesLeft);
+		}
+		if(wrongs == 6){
+			printf("Yo ass lost man. Womp womp.\n");
+			break;
 		}
 		printf("\n");
 		if(guessesLeft == 0){
