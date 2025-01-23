@@ -148,6 +148,7 @@ void play(){
 		}
 		if(wrongs == 6){
 			printf("Yo ass lost man. Womp womp.\n");
+			printf("The solution was: %s\n", solution);
 			break;
 		}
 		printf("\n");
